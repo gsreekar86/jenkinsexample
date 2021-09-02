@@ -14,7 +14,7 @@ pipeline {
 	stages {
         stage('Build') {
             steps {
-                cmake arguments: '-DCMAKE_TOOLCHAIN_FILE=~/Projects/vcpkg/scripts/buildsystems/vcpkg.cmake', installation: 'Cmake'
+                cmake arguments: '-DCMAKE_TOOLCHAIN_FILE=~/var/lib/jenkins/workspace/C-Project-Pipeline/vcpkg/scripts/buildsystems/vcpkg.cmake', installation: 'Cmake'
                 cmakeBuild buildType: 'Release', cleanBuild: true, installation: 'Cmake', steps: [[withCmake: true]]
             }
         }
